@@ -23,7 +23,7 @@ vertical-align: baseline;
 
 *{
     box-sizing:border-box; /*this rule says, if I give an element a width I want it to respect that width - if I add padding or a border, apply it within the width given not in addition to it*/
-    border:1px solid grey;
+    /* border:1px solid grey; */
     max-width:100%; /*this says you can never be bigger than your parent*/
 }
 /*General Styles*/ 
@@ -158,13 +158,54 @@ footer{
     }
 }
 
-@media(max-width: 500%) {
-
-    .blue {
+/*Phone View*/
+@media (max-width:500px){
+    nav{
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+    }
+    nav a{
+        width:50%;
+        margin:2% 0;
+    }
+    .blue{
         order:-1;
     }
-
-    header {
-        
+    /*header styles*/
+    header{
+        flex-wrap:wrap;
     }
-}
+    .image{
+        width:80%;
+    }
+    .title{
+        width:80%;
+        margin-top:4%;
+    }
+    .title div{
+        width:100%;
+    }
+    /*camp section styles*/
+    .camp div{
+        width:80%;
+    }
+    .camp div img{
+        width:60%;
+    }
+    /*bg img section*/
+    .bg-img{
+        height:40vh;
+        /* display:none; */
+    }
+  }
+
+  .sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+  }
